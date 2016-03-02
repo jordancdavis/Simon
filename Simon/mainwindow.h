@@ -1,3 +1,11 @@
+/*
+ * @ author
+ * date
+ * description
+ *
+*/
+
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

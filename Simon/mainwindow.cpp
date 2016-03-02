@@ -1,3 +1,11 @@
+/*
+ * @ author
+ * date
+ * description
+ *
+*/
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>

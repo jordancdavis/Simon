@@ -1,3 +1,11 @@
+/*
+ * @ author
+ * date
+ * description
+ *
+*/
+
+
 #include "mainwindow.h"
 #include <QApplication>
 #include <QPushButton>

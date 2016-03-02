@@ -25,6 +25,7 @@ SimonModel::SimonModel(QObject *parent) : QObject(parent) {
     emit updateProgress(0, 1);
 }
 
+
 void SimonModel::RedClicked() {
     if(computerMoves.at(clickCount) == 0){
         if(clickCount == computerMoves.length() - 1){
@@ -39,6 +40,7 @@ void SimonModel::RedClicked() {
     }
     return;
 }
+
 
 void SimonModel::BlueClicked() {
     if(computerMoves.at(clickCount) == 1){
@@ -55,6 +57,7 @@ void SimonModel::BlueClicked() {
     return;
 }
 
+
 void SimonModel::YellowClicked() {
     if(computerMoves.at(clickCount) == 2){
         if(clickCount == computerMoves.length() - 1){
@@ -69,6 +72,7 @@ void SimonModel::YellowClicked() {
     }
     return;
 }
+
 
 void SimonModel::GreenClicked() {
     if(computerMoves.at(clickCount) == 3){
@@ -98,6 +102,7 @@ void SimonModel::StartClicked() {
     }
 }
 
+
 void SimonModel::playComputer() {
     qDebug()<<"---------COMPUTER TURN---------";
 
@@ -108,14 +113,11 @@ void SimonModel::playComputer() {
     emit flashColor(thisMove);
     if((clickCount == computerMoves.length() - 1) && (!reachedNextLevel) &&(gameInProgress)){
         computerMoves.append(getNextColor());
-        qDebug()<<"here";
-        qDebug()<<computerMoves.last();
-        qDebug()<<"here";
-
         reachedNextLevel = true;
     }
     return;
 }
+
 
 void SimonModel::playPlayer() {
     qDebug()<<"---------PLAYER TURN---------";
@@ -124,10 +126,12 @@ void SimonModel::playPlayer() {
     return;
 }
 
+
 int SimonModel::getNextColor() {
     srand(time(NULL));
     return rand()%4; //make %4 for 4 colors
 }
+
 
 void SimonModel::flashButtonTimerFinished() {
     emit flashDone();
@@ -156,10 +160,6 @@ void SimonModel::flashPauseTimerFinished() {
     }
 }
 
-void SimonModel::endGame() {
-    //youlose
-    exit(1);
-}
 
 void SimonModel::getNextSequenceFromSimon(){
     clickCount = 0;
@@ -167,7 +167,7 @@ void SimonModel::getNextSequenceFromSimon(){
     flashPauseTimer->start(2000);   //pause simon slighly after user completes level
     emit simonsTurn();
     reachedNextLevel = false;
-    gameSpeed -= 25;
+    gameSpeed /= 1.05 ;             //modify game speed to our liking
     flashPauseDuration -= 50;
     playComputer();
 }
@@ -178,4 +178,10 @@ void SimonModel::getNextSequenceFromPlayer(){
     emit playersTurn();
     playPlayer();
     emit updateProgress(0, computerMoves.length());
+}
+
+
+void SimonModel::endGame() {
+    //youlose
+    exit(1);
 }

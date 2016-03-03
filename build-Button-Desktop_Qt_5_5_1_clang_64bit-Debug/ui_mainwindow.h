@@ -36,7 +36,10 @@ public:
     QLabel *TurnLabel;
     QPushButton *YellowButton;
     QPushButton *GreenButton;
-    QLabel *label;
+    QLabel *SimonLabel;
+    QPushButton *HintButton;
+    QLabel *HintLabel;
+    QLabel *HintCountLabel;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -54,7 +57,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         RedButton = new QPushButton(centralWidget);
         RedButton->setObjectName(QStringLiteral("RedButton"));
-        RedButton->setGeometry(QRect(220, 80, 150, 100));
+        RedButton->setGeometry(QRect(220, 110, 150, 100));
         QFont font;
         font.setPointSize(15);
         RedButton->setFont(font);
@@ -68,7 +71,7 @@ public:
 ""));
         BlueButton = new QPushButton(centralWidget);
         BlueButton->setObjectName(QStringLiteral("BlueButton"));
-        BlueButton->setGeometry(QRect(220, 200, 150, 100));
+        BlueButton->setGeometry(QRect(220, 220, 150, 100));
         BlueButton->setFont(font);
         BlueButton->setStyleSheet(QLatin1String("QPushButton{ \n"
 "                        border: 10px solid rgb(5, 74, 137);\n"
@@ -81,7 +84,7 @@ public:
         BlueButton->setFlat(false);
         StartButton = new QPushButton(centralWidget);
         StartButton->setObjectName(QStringLiteral("StartButton"));
-        StartButton->setGeometry(QRect(175, 170, 50, 35));
+        StartButton->setGeometry(QRect(175, 190, 50, 31));
         StartButton->setStyleSheet(QLatin1String("QPushButton{ \n"
 "					 border-radius: 15px;\n"
 "                        color:black;\n"
@@ -91,7 +94,7 @@ public:
         StartButton->setAutoDefault(false);
         ProgressBar = new QProgressBar(centralWidget);
         ProgressBar->setObjectName(QStringLiteral("ProgressBar"));
-        ProgressBar->setGeometry(QRect(70, 320, 301, 25));
+        ProgressBar->setGeometry(QRect(70, 70, 301, 25));
         ProgressBar->setStyleSheet(QLatin1String("border: 4px solid black;\n"
 "border-radius: 10px;\n"
 "background: white;\n"
@@ -101,14 +104,14 @@ public:
         ProgressBar->setValue(24);
         TurnLabel = new QLabel(centralWidget);
         TurnLabel->setObjectName(QStringLiteral("TurnLabel"));
-        TurnLabel->setGeometry(QRect(0, 50, 400, 20));
+        TurnLabel->setGeometry(QRect(0, 40, 400, 20));
         QFont font1;
         font1.setPointSize(16);
         TurnLabel->setFont(font1);
         TurnLabel->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         YellowButton = new QPushButton(centralWidget);
         YellowButton->setObjectName(QStringLiteral("YellowButton"));
-        YellowButton->setGeometry(QRect(30, 200, 150, 100));
+        YellowButton->setGeometry(QRect(30, 220, 150, 100));
         YellowButton->setStyleSheet(QLatin1String("QPushButton{ \n"
 "                        border: 10px solid rgb(167, 157, 3);\n"
 "					 border-radius: 50px;\n"
@@ -119,7 +122,7 @@ public:
 ""));
         GreenButton = new QPushButton(centralWidget);
         GreenButton->setObjectName(QStringLiteral("GreenButton"));
-        GreenButton->setGeometry(QRect(30, 80, 150, 100));
+        GreenButton->setGeometry(QRect(30, 110, 150, 100));
         GreenButton->setStyleSheet(QLatin1String("QPushButton{ \n"
 "                        border: 10px solid rgb(31, 128, 29);\n"
 "					 border-radius: 50px;\n"
@@ -128,18 +131,39 @@ public:
 "                        color:rgb(66, 211, 72);\n"
 "                         background-color:rgb(66, 211, 72); }\"\n"
 ""));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(0, 10, 400, 41));
+        SimonLabel = new QLabel(centralWidget);
+        SimonLabel->setObjectName(QStringLiteral("SimonLabel"));
+        SimonLabel->setGeometry(QRect(0, 0, 400, 41));
         QFont font2;
         font2.setFamily(QStringLiteral("Eurostile"));
         font2.setPointSize(40);
         font2.setBold(true);
         font2.setWeight(75);
         font2.setStyleStrategy(QFont::PreferAntialias);
-        label->setFont(font2);
-        label->setScaledContents(false);
-        label->setAlignment(Qt::AlignCenter);
+        SimonLabel->setFont(font2);
+        SimonLabel->setScaledContents(false);
+        SimonLabel->setAlignment(Qt::AlignCenter);
+        HintButton = new QPushButton(centralWidget);
+        HintButton->setObjectName(QStringLiteral("HintButton"));
+        HintButton->setGeometry(QRect(180, 230, 41, 21));
+        HintButton->setStyleSheet(QLatin1String("QPushButton{ \n"
+"					 border-radius: 10px;\n"
+"                        color:black;\n"
+"                        background-color:rgb(95, 248, 246);}\n"
+"\n"
+""));
+        HintLabel = new QLabel(centralWidget);
+        HintLabel->setObjectName(QStringLiteral("HintLabel"));
+        HintLabel->setGeometry(QRect(140, 320, 91, 20));
+        QFont font3;
+        font3.setPointSize(11);
+        HintLabel->setFont(font3);
+        HintLabel->setAlignment(Qt::AlignCenter);
+        HintCountLabel = new QLabel(centralWidget);
+        HintCountLabel->setObjectName(QStringLiteral("HintCountLabel"));
+        HintCountLabel->setGeometry(QRect(230, 320, 21, 20));
+        HintCountLabel->setFont(font3);
+        HintCountLabel->setAlignment(Qt::AlignCenter);
         MainWindow->setCentralWidget(centralWidget);
         RedButton->raise();
         BlueButton->raise();
@@ -148,7 +172,10 @@ public:
         YellowButton->raise();
         GreenButton->raise();
         ProgressBar->raise();
-        label->raise();
+        SimonLabel->raise();
+        HintButton->raise();
+        HintLabel->raise();
+        HintCountLabel->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 400, 22));
@@ -177,7 +204,10 @@ public:
         TurnLabel->setText(QApplication::translate("MainWindow", "Simon Says", 0));
         YellowButton->setText(QString());
         GreenButton->setText(QString());
-        label->setText(QApplication::translate("MainWindow", "SIMON", 0));
+        SimonLabel->setText(QApplication::translate("MainWindow", "SIMON", 0));
+        HintButton->setText(QApplication::translate("MainWindow", "Hint", 0));
+        HintLabel->setText(QApplication::translate("MainWindow", "Hints Remaining:", 0));
+        HintCountLabel->setText(QApplication::translate("MainWindow", "3", 0));
     } // retranslateUi
 
 };

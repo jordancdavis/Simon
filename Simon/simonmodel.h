@@ -24,9 +24,11 @@ private:
     int clickCount;
     int flashPauseDuration;
     int gameSpeed;
+    int hintsRemaining;
     bool gameInProgress;
     bool isPlayersTurn;
     bool reachedNextLevel;
+    bool allowHint;
     QTimer* buttonFlashTimer;
     QTimer* flashPauseTimer;
 
@@ -46,12 +48,14 @@ signals:
     void playersTurn();
     void updateProgress(int, int);
     void endGame();
+    void provideHints(int, int);
 
 public slots:
     void ColorClicked(int);
     void StartClicked();
     void flashButtonTimerFinished();
     void flashPauseTimerFinished();
+    void GiveHint();
 };
 
 #endif // SIMONMODEL_H

@@ -13,11 +13,13 @@
  */
 SimonModel::SimonModel(QObject *parent) : QObject(parent) {
     clickCount = 0;                         //index in the sequence
+    hintsRemaining = 3;                     //user gets 3 hints
     reachedNextLevel = false;               //determines if new color is needed
     gameInProgress = false;                 //game began/ended
     flashPauseDuration = 1000;              //flash duration
     gameSpeed = 500;                        //speed sequence is repeated
     isPlayersTurn = false;                  //player or simons turn
+    allowHint = false;                      //prevents user from double hinting the same color
     buttonFlashTimer = new QTimer(this);    //timer for button flash
     flashPauseTimer = new QTimer(this);     //timer to separate button flashes
     buttonFlashTimer->setSingleShot(true);
@@ -25,6 +27,7 @@ SimonModel::SimonModel(QObject *parent) : QObject(parent) {
     QObject::connect(buttonFlashTimer, SIGNAL(timeout()), this, SLOT(flashButtonTimerFinished()));
     QObject::connect(flashPauseTimer, SIGNAL(timeout()), this, SLOT(flashPauseTimerFinished()));
     emit updateProgress(0, 1);
+
 }
 
 /**
@@ -47,6 +50,7 @@ void SimonModel::ColorClicked(int color) {
         gameInProgress = false;
         emit endGame();
     }
+    allowHint = true;
 }
 
 /**
@@ -55,13 +59,15 @@ void SimonModel::ColorClicked(int color) {
 void SimonModel::StartClicked() {
     computerMoves.clear();
     clickCount = -1;
+    hintsRemaining = 3;
     computerMoves.append(getNextColor());
-    flashPauseTimer->start(2000);
+    flashPauseTimer->start(1000);
     if(!gameInProgress){           //only call this if needed
         emit startToRestart();    //all this does is change button label to "restart"
     }
     emit flashDone();
     reachedNextLevel = false;
+    allowHint = false;
     gameInProgress = true;
     isPlayersTurn = false;
 }
@@ -117,6 +123,7 @@ void SimonModel::flashPauseTimerFinished() {
     }
     else if(clickCount < computerMoves.length() && isPlayersTurn){
         emit playersTurn();
+        allowHint = true;
     }
     else{
         playComputer();
@@ -146,7 +153,15 @@ void SimonModel::getNextSequenceFromSimon(){
 void SimonModel::getNextSequenceFromPlayer(){
     clickCount = 0;
     isPlayersTurn = true;
+    allowHint = true;
     emit playersTurn();
     emit updateProgress(0, computerMoves.length());
+}
+
+void SimonModel::GiveHint(){
+    if(hintsRemaining > 0 && allowHint){
+        allowHint = false;
+        emit provideHints(computerMoves.at(clickCount), --hintsRemaining);
+    }
 }
 

@@ -10,7 +10,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPalette>
 #include <time.h>
 #include <QTimer>
 
@@ -32,6 +31,7 @@ public:
 signals:
     void ColorButtonClicked(int);
     void StartButtonClicked();
+    void HintRequest();
 
 private slots:
     void on_RedButton_clicked();
@@ -41,6 +41,7 @@ private slots:
     void on_StartButton_clicked();
     void flashButtonWithColor(int);
     void flashComplete();
+    void on_HintButton_clicked();
 
 public slots:
     void makeRestartButton();
@@ -48,6 +49,7 @@ public slots:
     void simonsTurn();
     void updateProgress(int, int);
     void gameOver();
+    void updateHint(int, int);
 
 };
 

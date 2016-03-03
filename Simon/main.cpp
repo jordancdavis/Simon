@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
 
     QObject::connect(&w, SIGNAL(ColorButtonClicked(int)), &simon, SLOT(ColorClicked(int)));
     QObject::connect(&w, SIGNAL(StartButtonClicked()), &simon, SLOT(StartClicked()));
+    QObject::connect(&w, SIGNAL(HintRequest()), &simon, SLOT(GiveHint()));
     QObject::connect(&simon, SIGNAL(flashColor(int)), &w, SLOT(flashButtonWithColor(int)));
     QObject::connect(&simon, SIGNAL(flashDone()), &w, SLOT(flashComplete()));
     QObject::connect(&simon, SIGNAL(startToRestart()), &w, SLOT(makeRestartButton()));
@@ -27,6 +28,8 @@ int main(int argc, char *argv[]) {
     QObject::connect(&simon, SIGNAL(simonsTurn()), &w, SLOT(simonsTurn()));
     QObject::connect(&simon, SIGNAL(updateProgress(int, int)), &w, SLOT(updateProgress(int, int)));
     QObject::connect(&simon, SIGNAL(endGame()), &w, SLOT(gameOver()));
+    QObject::connect(&simon, SIGNAL(provideHints(int, int)), &w, SLOT(updateHint(int, int)));
+
 
     return a.exec();
 }

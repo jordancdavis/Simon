@@ -1,6 +1,6 @@
 /*
- * @ author
- * date
+ * @ author Karla Kraiss & Jordan Davis
+ * 3/2/2016
  * description
  *
 */
@@ -27,7 +27,6 @@ int main(int argc, char *argv[]) {
     QObject::connect(&simon, SIGNAL(simonsTurn()), &w, SLOT(simonsTurn()));
     QObject::connect(&simon, SIGNAL(updateProgress(int, int)), &w, SLOT(updateProgress(int, int)));
     QObject::connect(&simon, SIGNAL(endGame()), &w, SLOT(gameOver()));
-
 
     return a.exec();
 }

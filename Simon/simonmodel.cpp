@@ -1,10 +1,9 @@
 /*
- * @ author
- * date
+ * @ author Karla Kraiss & Jordan Davis
+ * 3/2/2016
  * description
  *
 */
-
 
 #include "simonmodel.h"
 

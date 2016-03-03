@@ -34,25 +34,21 @@ public:
     explicit SimonModel(QObject *parent = 0);
     QList<int> computerMoves;
     void playComputer();
-    void playPlayer();
     int getNextColor();
-    void endGame();
     void getNextSequenceFromSimon();
     void getNextSequenceFromPlayer();
 
 signals:
     void flashColor(int);
     void flashDone();
-    void DisableStart();
+    void startToRestart();
     void simonsTurn();
     void playersTurn();
     void updateProgress(int, int);
+    void endGame();
 
 public slots:
-    void RedClicked();
-    void BlueClicked();
-    void YellowClicked();
-    void GreenClicked();
+    void ColorClicked(int);
     void StartClicked();
     void flashButtonTimerFinished();
     void flashPauseTimerFinished();

@@ -30,10 +30,7 @@ public:
     ~MainWindow();
 
 signals:
-    void RedButtonClicked();
-    void BlueButtonClicked();
-    void YellowButtonClicked();
-    void GreenButtonClicked();
+    void ColorButtonClicked(int);
     void StartButtonClicked();
 
 private slots:
@@ -46,10 +43,11 @@ private slots:
     void flashComplete();
 
 public slots:
-    void disableStart();
+    void makeRestartButton();
     void playersTurn();
     void simonsTurn();
     void updateProgress(int, int);
+    void gameOver();
 
 };
 

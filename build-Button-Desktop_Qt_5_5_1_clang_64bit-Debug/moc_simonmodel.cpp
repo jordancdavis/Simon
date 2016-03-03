@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_SimonModel_t {
-    QByteArrayData data[15];
-    char stringdata0[196];
+    QByteArrayData data[13];
+    char stringdata0[169];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,24 +33,21 @@ QT_MOC_LITERAL(0, 0, 10), // "SimonModel"
 QT_MOC_LITERAL(1, 11, 10), // "flashColor"
 QT_MOC_LITERAL(2, 22, 0), // ""
 QT_MOC_LITERAL(3, 23, 9), // "flashDone"
-QT_MOC_LITERAL(4, 33, 12), // "DisableStart"
-QT_MOC_LITERAL(5, 46, 10), // "simonsTurn"
-QT_MOC_LITERAL(6, 57, 11), // "playersTurn"
-QT_MOC_LITERAL(7, 69, 14), // "updateProgress"
-QT_MOC_LITERAL(8, 84, 10), // "RedClicked"
-QT_MOC_LITERAL(9, 95, 11), // "BlueClicked"
-QT_MOC_LITERAL(10, 107, 13), // "YellowClicked"
-QT_MOC_LITERAL(11, 121, 12), // "GreenClicked"
-QT_MOC_LITERAL(12, 134, 12), // "StartClicked"
-QT_MOC_LITERAL(13, 147, 24), // "flashButtonTimerFinished"
-QT_MOC_LITERAL(14, 172, 23) // "flashPauseTimerFinished"
+QT_MOC_LITERAL(4, 33, 14), // "startToRestart"
+QT_MOC_LITERAL(5, 48, 10), // "simonsTurn"
+QT_MOC_LITERAL(6, 59, 11), // "playersTurn"
+QT_MOC_LITERAL(7, 71, 14), // "updateProgress"
+QT_MOC_LITERAL(8, 86, 7), // "endGame"
+QT_MOC_LITERAL(9, 94, 12), // "ColorClicked"
+QT_MOC_LITERAL(10, 107, 12), // "StartClicked"
+QT_MOC_LITERAL(11, 120, 24), // "flashButtonTimerFinished"
+QT_MOC_LITERAL(12, 145, 23) // "flashPauseTimerFinished"
 
     },
     "SimonModel\0flashColor\0\0flashDone\0"
-    "DisableStart\0simonsTurn\0playersTurn\0"
-    "updateProgress\0RedClicked\0BlueClicked\0"
-    "YellowClicked\0GreenClicked\0StartClicked\0"
-    "flashButtonTimerFinished\0"
+    "startToRestart\0simonsTurn\0playersTurn\0"
+    "updateProgress\0endGame\0ColorClicked\0"
+    "StartClicked\0flashButtonTimerFinished\0"
     "flashPauseTimerFinished"
 };
 #undef QT_MOC_LITERAL
@@ -61,29 +58,27 @@ static const uint qt_meta_data_SimonModel[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   79,    2, 0x06 /* Public */,
-       3,    0,   82,    2, 0x06 /* Public */,
-       4,    0,   83,    2, 0x06 /* Public */,
-       5,    0,   84,    2, 0x06 /* Public */,
-       6,    0,   85,    2, 0x06 /* Public */,
-       7,    2,   86,    2, 0x06 /* Public */,
+       1,    1,   69,    2, 0x06 /* Public */,
+       3,    0,   72,    2, 0x06 /* Public */,
+       4,    0,   73,    2, 0x06 /* Public */,
+       5,    0,   74,    2, 0x06 /* Public */,
+       6,    0,   75,    2, 0x06 /* Public */,
+       7,    2,   76,    2, 0x06 /* Public */,
+       8,    0,   81,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    0,   91,    2, 0x0a /* Public */,
-       9,    0,   92,    2, 0x0a /* Public */,
-      10,    0,   93,    2, 0x0a /* Public */,
-      11,    0,   94,    2, 0x0a /* Public */,
-      12,    0,   95,    2, 0x0a /* Public */,
-      13,    0,   96,    2, 0x0a /* Public */,
-      14,    0,   97,    2, 0x0a /* Public */,
+       9,    1,   82,    2, 0x0a /* Public */,
+      10,    0,   85,    2, 0x0a /* Public */,
+      11,    0,   86,    2, 0x0a /* Public */,
+      12,    0,   87,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    2,
@@ -92,12 +87,10 @@ static const uint qt_meta_data_SimonModel[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
+    QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -113,17 +106,15 @@ void SimonModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->flashColor((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: _t->flashDone(); break;
-        case 2: _t->DisableStart(); break;
+        case 2: _t->startToRestart(); break;
         case 3: _t->simonsTurn(); break;
         case 4: _t->playersTurn(); break;
         case 5: _t->updateProgress((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 6: _t->RedClicked(); break;
-        case 7: _t->BlueClicked(); break;
-        case 8: _t->YellowClicked(); break;
-        case 9: _t->GreenClicked(); break;
-        case 10: _t->StartClicked(); break;
-        case 11: _t->flashButtonTimerFinished(); break;
-        case 12: _t->flashPauseTimerFinished(); break;
+        case 6: _t->endGame(); break;
+        case 7: _t->ColorClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->StartClicked(); break;
+        case 9: _t->flashButtonTimerFinished(); break;
+        case 10: _t->flashPauseTimerFinished(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -143,7 +134,7 @@ void SimonModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         }
         {
             typedef void (SimonModel::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&SimonModel::DisableStart)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&SimonModel::startToRestart)) {
                 *result = 2;
             }
         }
@@ -163,6 +154,12 @@ void SimonModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             typedef void (SimonModel::*_t)(int , int );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&SimonModel::updateProgress)) {
                 *result = 5;
+            }
+        }
+        {
+            typedef void (SimonModel::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&SimonModel::endGame)) {
+                *result = 6;
             }
         }
     }
@@ -193,13 +190,13 @@ int SimonModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 11;
     }
     return _id;
 }
@@ -218,7 +215,7 @@ void SimonModel::flashDone()
 }
 
 // SIGNAL 2
-void SimonModel::DisableStart()
+void SimonModel::startToRestart()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
 }
@@ -240,5 +237,11 @@ void SimonModel::updateProgress(int _t1, int _t2)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void SimonModel::endGame()
+{
+    QMetaObject::activate(this, &staticMetaObject, 6, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

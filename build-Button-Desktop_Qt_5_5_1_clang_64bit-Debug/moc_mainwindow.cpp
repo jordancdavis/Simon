@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[18];
-    char stringdata0[304];
+    QByteArrayData data[16];
+    char stringdata0[263];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,33 +30,30 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 16), // "RedButtonClicked"
-QT_MOC_LITERAL(2, 28, 0), // ""
-QT_MOC_LITERAL(3, 29, 17), // "BlueButtonClicked"
-QT_MOC_LITERAL(4, 47, 19), // "YellowButtonClicked"
-QT_MOC_LITERAL(5, 67, 18), // "GreenButtonClicked"
-QT_MOC_LITERAL(6, 86, 18), // "StartButtonClicked"
-QT_MOC_LITERAL(7, 105, 20), // "on_RedButton_clicked"
-QT_MOC_LITERAL(8, 126, 21), // "on_BlueButton_clicked"
-QT_MOC_LITERAL(9, 148, 23), // "on_YellowButton_clicked"
-QT_MOC_LITERAL(10, 172, 22), // "on_GreenButton_clicked"
-QT_MOC_LITERAL(11, 195, 22), // "on_StartButton_clicked"
-QT_MOC_LITERAL(12, 218, 20), // "flashButtonWithColor"
-QT_MOC_LITERAL(13, 239, 13), // "flashComplete"
-QT_MOC_LITERAL(14, 253, 12), // "disableStart"
-QT_MOC_LITERAL(15, 266, 11), // "playersTurn"
-QT_MOC_LITERAL(16, 278, 10), // "simonsTurn"
-QT_MOC_LITERAL(17, 289, 14) // "updateProgress"
+QT_MOC_LITERAL(1, 11, 18), // "ColorButtonClicked"
+QT_MOC_LITERAL(2, 30, 0), // ""
+QT_MOC_LITERAL(3, 31, 18), // "StartButtonClicked"
+QT_MOC_LITERAL(4, 50, 20), // "on_RedButton_clicked"
+QT_MOC_LITERAL(5, 71, 21), // "on_BlueButton_clicked"
+QT_MOC_LITERAL(6, 93, 23), // "on_YellowButton_clicked"
+QT_MOC_LITERAL(7, 117, 22), // "on_GreenButton_clicked"
+QT_MOC_LITERAL(8, 140, 22), // "on_StartButton_clicked"
+QT_MOC_LITERAL(9, 163, 20), // "flashButtonWithColor"
+QT_MOC_LITERAL(10, 184, 13), // "flashComplete"
+QT_MOC_LITERAL(11, 198, 17), // "makeRestartButton"
+QT_MOC_LITERAL(12, 216, 11), // "playersTurn"
+QT_MOC_LITERAL(13, 228, 10), // "simonsTurn"
+QT_MOC_LITERAL(14, 239, 14), // "updateProgress"
+QT_MOC_LITERAL(15, 254, 8) // "gameOver"
 
     },
-    "MainWindow\0RedButtonClicked\0\0"
-    "BlueButtonClicked\0YellowButtonClicked\0"
-    "GreenButtonClicked\0StartButtonClicked\0"
-    "on_RedButton_clicked\0on_BlueButton_clicked\0"
-    "on_YellowButton_clicked\0on_GreenButton_clicked\0"
-    "on_StartButton_clicked\0flashButtonWithColor\0"
-    "flashComplete\0disableStart\0playersTurn\0"
-    "simonsTurn\0updateProgress"
+    "MainWindow\0ColorButtonClicked\0\0"
+    "StartButtonClicked\0on_RedButton_clicked\0"
+    "on_BlueButton_clicked\0on_YellowButton_clicked\0"
+    "on_GreenButton_clicked\0on_StartButton_clicked\0"
+    "flashButtonWithColor\0flashComplete\0"
+    "makeRestartButton\0playersTurn\0simonsTurn\0"
+    "updateProgress\0gameOver"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,38 +63,33 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       5,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   94,    2, 0x06 /* Public */,
-       3,    0,   95,    2, 0x06 /* Public */,
-       4,    0,   96,    2, 0x06 /* Public */,
-       5,    0,   97,    2, 0x06 /* Public */,
-       6,    0,   98,    2, 0x06 /* Public */,
+       1,    1,   84,    2, 0x06 /* Public */,
+       3,    0,   87,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       7,    0,   99,    2, 0x08 /* Private */,
-       8,    0,  100,    2, 0x08 /* Private */,
-       9,    0,  101,    2, 0x08 /* Private */,
-      10,    0,  102,    2, 0x08 /* Private */,
-      11,    0,  103,    2, 0x08 /* Private */,
-      12,    1,  104,    2, 0x08 /* Private */,
-      13,    0,  107,    2, 0x08 /* Private */,
-      14,    0,  108,    2, 0x0a /* Public */,
-      15,    0,  109,    2, 0x0a /* Public */,
-      16,    0,  110,    2, 0x0a /* Public */,
-      17,    2,  111,    2, 0x0a /* Public */,
+       4,    0,   88,    2, 0x08 /* Private */,
+       5,    0,   89,    2, 0x08 /* Private */,
+       6,    0,   90,    2, 0x08 /* Private */,
+       7,    0,   91,    2, 0x08 /* Private */,
+       8,    0,   92,    2, 0x08 /* Private */,
+       9,    1,   93,    2, 0x08 /* Private */,
+      10,    0,   96,    2, 0x08 /* Private */,
+      11,    0,   97,    2, 0x0a /* Public */,
+      12,    0,   98,    2, 0x0a /* Public */,
+      13,    0,   99,    2, 0x0a /* Public */,
+      14,    2,  100,    2, 0x0a /* Public */,
+      15,    0,  105,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void,
 
  // slots: parameters
@@ -112,6 +104,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -122,55 +115,35 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->RedButtonClicked(); break;
-        case 1: _t->BlueButtonClicked(); break;
-        case 2: _t->YellowButtonClicked(); break;
-        case 3: _t->GreenButtonClicked(); break;
-        case 4: _t->StartButtonClicked(); break;
-        case 5: _t->on_RedButton_clicked(); break;
-        case 6: _t->on_BlueButton_clicked(); break;
-        case 7: _t->on_YellowButton_clicked(); break;
-        case 8: _t->on_GreenButton_clicked(); break;
-        case 9: _t->on_StartButton_clicked(); break;
-        case 10: _t->flashButtonWithColor((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: _t->flashComplete(); break;
-        case 12: _t->disableStart(); break;
-        case 13: _t->playersTurn(); break;
-        case 14: _t->simonsTurn(); break;
-        case 15: _t->updateProgress((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 0: _t->ColorButtonClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->StartButtonClicked(); break;
+        case 2: _t->on_RedButton_clicked(); break;
+        case 3: _t->on_BlueButton_clicked(); break;
+        case 4: _t->on_YellowButton_clicked(); break;
+        case 5: _t->on_GreenButton_clicked(); break;
+        case 6: _t->on_StartButton_clicked(); break;
+        case 7: _t->flashButtonWithColor((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->flashComplete(); break;
+        case 9: _t->makeRestartButton(); break;
+        case 10: _t->playersTurn(); break;
+        case 11: _t->simonsTurn(); break;
+        case 12: _t->updateProgress((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 13: _t->gameOver(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (MainWindow::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::RedButtonClicked)) {
+            typedef void (MainWindow::*_t)(int );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::ColorButtonClicked)) {
                 *result = 0;
             }
         }
         {
             typedef void (MainWindow::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::BlueButtonClicked)) {
-                *result = 1;
-            }
-        }
-        {
-            typedef void (MainWindow::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::YellowButtonClicked)) {
-                *result = 2;
-            }
-        }
-        {
-            typedef void (MainWindow::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::GreenButtonClicked)) {
-                *result = 3;
-            }
-        }
-        {
-            typedef void (MainWindow::*_t)();
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::StartButtonClicked)) {
-                *result = 4;
+                *result = 1;
             }
         }
     }
@@ -201,44 +174,27 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 14)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        _id -= 14;
     }
     return _id;
 }
 
 // SIGNAL 0
-void MainWindow::RedButtonClicked()
+void MainWindow::ColorButtonClicked(int _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void MainWindow::BlueButtonClicked()
-{
-    QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
-}
-
-// SIGNAL 2
-void MainWindow::YellowButtonClicked()
-{
-    QMetaObject::activate(this, &staticMetaObject, 2, Q_NULLPTR);
-}
-
-// SIGNAL 3
-void MainWindow::GreenButtonClicked()
-{
-    QMetaObject::activate(this, &staticMetaObject, 3, Q_NULLPTR);
-}
-
-// SIGNAL 4
 void MainWindow::StartButtonClicked()
 {
-    QMetaObject::activate(this, &staticMetaObject, 4, Q_NULLPTR);
+    QMetaObject::activate(this, &staticMetaObject, 1, Q_NULLPTR);
 }
 QT_END_MOC_NAMESPACE

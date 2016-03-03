@@ -59,10 +59,9 @@ public:
         font.setPointSize(15);
         RedButton->setFont(font);
         RedButton->setStyleSheet(QLatin1String("QPushButton{ \n"
-"                        border: 10px solid rgb(239, 22, 20);\n"
+"                        border: 10px solid rgb(129, 0, 1);\n"
 "					 border-radius: 50px;\n"
-"                        color:rgb(239, 22, 20);\n"
-"                        background-color:white;}\n"
+"                        background-color:rgb(129, 0, 1);}\n"
 "QPushButton:pressed {\n"
 "                        color:rgb(239, 22, 20);\n"
 "                         background-color:rgb(239, 22, 20); }\"\n"
@@ -72,13 +71,12 @@ public:
         BlueButton->setGeometry(QRect(220, 200, 150, 100));
         BlueButton->setFont(font);
         BlueButton->setStyleSheet(QLatin1String("QPushButton{ \n"
-"                        border: 10px solid rgb(19, 152, 236);\n"
+"                        border: 10px solid rgb(5, 74, 137);\n"
 "					 border-radius: 50px;\n"
-"                        color:rgb(19, 152, 236);\n"
-"                        background-color:white;}\n"
+"                      background-color:rgb(5, 74, 137);}\n"
 "QPushButton:pressed {\n"
-"                        color:rgb(19, 152, 236);\n"
-"                         background-color:rgb(19, 152, 236); }\"\n"
+"                        color:rgb(6, 150, 255);\n"
+"                         background-color:rgb(6, 150, 255); }\"\n"
 ""));
         BlueButton->setFlat(false);
         StartButton = new QPushButton(centralWidget);
@@ -90,6 +88,7 @@ public:
 "                        background-color:rgb(63, 207, 69);}\n"
 "\n"
 ""));
+        StartButton->setAutoDefault(false);
         ProgressBar = new QProgressBar(centralWidget);
         ProgressBar->setObjectName(QStringLiteral("ProgressBar"));
         ProgressBar->setGeometry(QRect(70, 320, 301, 25));
@@ -111,10 +110,9 @@ public:
         YellowButton->setObjectName(QStringLiteral("YellowButton"));
         YellowButton->setGeometry(QRect(30, 200, 150, 100));
         YellowButton->setStyleSheet(QLatin1String("QPushButton{ \n"
-"                        border: 10px solid rgb(253, 249, 40);\n"
+"                        border: 10px solid rgb(167, 157, 3);\n"
 "					 border-radius: 50px;\n"
-"                        color:rgb(253, 249, 40);\n"
-"                        background-color:white;}\n"
+"                        background-color:rgb(167, 157, 3);}\n"
 "QPushButton:pressed {\n"
 "                        color:rgb(253, 249, 40);\n"
 "                         background-color:rgb(253, 249, 40); }\"\n"
@@ -123,10 +121,9 @@ public:
         GreenButton->setObjectName(QStringLiteral("GreenButton"));
         GreenButton->setGeometry(QRect(30, 80, 150, 100));
         GreenButton->setStyleSheet(QLatin1String("QPushButton{ \n"
-"                        border: 10px solid rgb(66, 211, 72);\n"
+"                        border: 10px solid rgb(31, 128, 29);\n"
 "					 border-radius: 50px;\n"
-"                        color:rgb(66, 211, 72);\n"
-"                        background-color:white;}\n"
+"                        background-color:rgb(31, 128, 29);}\n"
 "QPushButton:pressed {\n"
 "                        color:rgb(66, 211, 72);\n"
 "                         background-color:rgb(66, 211, 72); }\"\n"
@@ -165,18 +162,21 @@ public:
 
         retranslateUi(MainWindow);
 
+        StartButton->setDefault(false);
+
+
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        RedButton->setText(QApplication::translate("MainWindow", "Red", 0));
-        BlueButton->setText(QApplication::translate("MainWindow", "Blue", 0));
+        RedButton->setText(QString());
+        BlueButton->setText(QString());
         StartButton->setText(QApplication::translate("MainWindow", "Start", 0));
         TurnLabel->setText(QApplication::translate("MainWindow", "Simon Says", 0));
-        YellowButton->setText(QApplication::translate("MainWindow", "Yellow", 0));
-        GreenButton->setText(QApplication::translate("MainWindow", "Green", 0));
+        YellowButton->setText(QString());
+        GreenButton->setText(QString());
         label->setText(QApplication::translate("MainWindow", "SIMON", 0));
     } // retranslateUi
 
